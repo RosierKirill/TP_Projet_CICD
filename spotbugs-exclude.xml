@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  SpotBugs exclusion filter.
+  Excludes false-positives typical in Spring Boot / Lombok / MapStruct generated code.
+-->
+<FindBugsFilter>
+  <!-- Lombok-generated equals/hashCode patterns -->
+  <Match>
+    <Bug pattern="EQ_UNUSUAL"/>
+  </Match>
+  <!-- MapStruct generated implementations -->
+  <Match>
+    <Class name="~.*MapperImpl"/>
+  </Match>
+  <!-- Spring Security config — intentional null returns -->
+  <Match>
+    <Class name="~.*SecurityConfig"/>
+    <Bug pattern="PZLA_PREFER_ZERO_LENGTH_ARRAYS"/>
+  </Match>
+  <!-- DTOs with nullable fields by design -->
+  <Match>
+    <Package name="com.stockms.interfaces.dto"/>
+    <Bug pattern="NP_UNWRITTEN_PUBLIC_OR_PROTECTED_FIELD"/>
+  </Match>
+</FindBugsFilter>
