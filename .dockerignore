@@ -1,0 +1,23 @@
+# Build artifacts
+target/
+*.class
+
+# VCS
+.git/
+.gitignore
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+
+# Docs / config not needed in image
+*.md
+terraform/
+.github/
+docker-compose*.yml
+.env*
+
+# Test resources
+src/test/
