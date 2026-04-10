@@ -37,7 +37,10 @@
     <module name="ConstantName"/>
     <module name="LocalVariableName"/>
     <module name="MemberName"/>
-    <module name="MethodName"/>
+    <!-- Allow underscores in test method names (given_when_then convention) -->
+    <module name="MethodName">
+      <property name="format" value="^[a-z][a-zA-Z0-9_]*$"/>
+    </module>
     <module name="PackageName">
       <property name="format" value="^[a-z]+(\.[a-z][a-z0-9]*)*$"/>
     </module>

@@ -12,12 +12,14 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: validate
+      # Flyway is the schema source of truth — Hibernate must not touch DDL
+      ddl-auto: none
     open-in-view: false
     properties:
       hibernate:
         format_sql: false
         default_schema: public
+        dialect: org.hibernate.dialect.PostgreSQLDialect
 
   flyway:
     enabled: true

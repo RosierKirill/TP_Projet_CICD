@@ -1,0 +1,14 @@
+# Overrides for integration tests — datasource URL injected by @ServiceConnection
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: none
+  flyway:
+    enabled: true
+  # Silence Hibernate SQL in test output
+  jpa.show-sql: false
+
+logging:
+  level:
+    org.testcontainers: WARN
+    com.github.dockerjava: WARN
